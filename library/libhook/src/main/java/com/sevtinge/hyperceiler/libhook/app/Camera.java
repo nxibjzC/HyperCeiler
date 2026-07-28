@@ -37,7 +37,7 @@ public class Camera extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         // 拍照
         initHook(new CustomWatermark(), PrefsBridge.getBoolean("camera_custom_watermark"));
         initHook(new BlackLeica(), PrefsBridge.getBoolean("camera_black_leica"));

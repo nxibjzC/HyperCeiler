@@ -99,7 +99,7 @@ import java.util.Objects;
 public class HomePhone extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         boolean gesturesEnabled = PrefsBridge.getBoolean("home_gesture_enable");
         boolean hasCornerGestureAction = PrefsBridge.getInt("home_navigation_assist_left_slide_action", 0) > 0
             || PrefsBridge.getInt("home_navigation_assist_right_slide_action", 0) > 0;

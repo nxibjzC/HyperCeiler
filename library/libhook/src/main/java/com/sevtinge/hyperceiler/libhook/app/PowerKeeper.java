@@ -33,7 +33,7 @@ public class PowerKeeper extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new GmsDozeFix(), PrefsBridge.getBoolean("powerkeeper_gms_doze_fix"));
         initHook(new CustomRefreshRate(), PrefsBridge.getBoolean("various_custom_refresh_rate"));
         initHook(new DisableGetDisplayCtrlCode(), PrefsBridge.getBoolean("powerkeeper_disable_get_display_ctrl_code"));

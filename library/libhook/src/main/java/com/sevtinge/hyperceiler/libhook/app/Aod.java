@@ -31,7 +31,7 @@ import com.sevtinge.hyperceiler.libhook.rules.aod.UnlockShortCuts;
 public class Aod extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(UnlockShortCuts.INSTANCE, isMoreSmallVersion(200, 2f));
         // initHook(new UnlockAlwaysOnDisplay(), PrefsBridge.getBoolean("aod_unlock_always_on_display_hyper"));
         initHook(new UnlockAodAon(), PrefsBridge.getBoolean("aod_unlock_aon"));

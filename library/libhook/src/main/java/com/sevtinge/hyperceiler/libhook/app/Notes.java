@@ -28,7 +28,7 @@ import com.sevtinge.hyperceiler.libhook.rules.notes.UnlockAI;
 public class Notes extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableAiWatermark(), PrefsBridge.getBoolean("notes_disable_ai_watermark"));
         initHook(UnlockAI.INSTANCE, PrefsBridge.getStringAsInt("notes_unlock_ai_mode", 0) != 0);
     }

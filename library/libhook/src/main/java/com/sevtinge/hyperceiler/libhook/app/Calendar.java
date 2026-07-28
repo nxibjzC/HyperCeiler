@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.calendar.UnlockSubscription;
 public class Calendar extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new UnlockSubscription(), PrefsBridge.getBoolean("calendar_unlock_subscription"));
     }
 }

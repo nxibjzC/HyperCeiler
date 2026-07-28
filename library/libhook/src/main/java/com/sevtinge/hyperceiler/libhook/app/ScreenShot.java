@@ -35,7 +35,7 @@ public class ScreenShot extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(UnlockMinimumCropLimit2.INSTANCE, PrefsBridge.getBoolean("screenshot_unlock_minimum_crop_limit"));
         initHook(SaveToPictures.INSTANCE, PrefsBridge.getBoolean("screenshot_save_to_pictures"));
         initHook(DeviceShellCustomize.INSTANCE, !TextUtils.isEmpty(PrefsBridge.getString("screenshot_device_customize", "")));

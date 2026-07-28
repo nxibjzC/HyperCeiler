@@ -33,7 +33,7 @@ import com.sevtinge.hyperceiler.libhook.rules.scanner.document.EnablePpt;
 public class Scanner extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new EnableOcr(), PrefsBridge.getBoolean("scanner_ocr"));
         initHook(new EnableExcel(), PrefsBridge.getBoolean("scanner_excel"));
         initHook(new EnablePpt(), PrefsBridge.getBoolean("scanner_ppt"));

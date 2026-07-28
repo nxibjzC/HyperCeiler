@@ -29,7 +29,7 @@ public class MiSettings extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(CustomRefreshRate.INSTANCE, PrefsBridge.getBoolean("various_custom_refresh_rate"));
         initHook(ShowMoreFpsList.INSTANCE, PrefsBridge.getBoolean("mi_settings_show_fps"));
     }

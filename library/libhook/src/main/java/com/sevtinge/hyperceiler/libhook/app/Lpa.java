@@ -29,7 +29,7 @@ import java.util.Objects;
 @HookBase(targetPackage = "com.miui.euicc")
 public class Lpa extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new CustomImei(), !Objects.equals(PrefsBridge.getString("lpa_custom_imei", ""), ""));
     }
 }

@@ -26,7 +26,7 @@ import com.sevtinge.hyperceiler.common.utils.PrefsBridge;
 @HookBase(targetPackage = "com.android.server.telecom")
 public class Telecom extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new ScamReminderBypass(), PrefsBridge.getBoolean("scam_reminder_bypass"));
     }
 }

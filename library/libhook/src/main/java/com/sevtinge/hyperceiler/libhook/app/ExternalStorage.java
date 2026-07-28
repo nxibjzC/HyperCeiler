@@ -28,7 +28,7 @@ public class ExternalStorage extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableFolderCantUse(), PrefsBridge.getBoolean("various_disable_folder_cantuse"));
     }
 }

@@ -26,7 +26,7 @@ import com.sevtinge.hyperceiler.libhook.rules.htmlviewer.DisableUpdateCloudAllDa
 @HookBase(targetPackage = "com.android.htmlviewer")
 public class HtmlViewer extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableUpdateCloudAllData(), PrefsBridge.getBoolean("html_viewer_disable_cloud_control"));
     }
 }

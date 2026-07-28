@@ -28,7 +28,7 @@ public class TrustService extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableMrm(), PrefsBridge.getBoolean("trustservice_disable_mrm"));
     }
 }

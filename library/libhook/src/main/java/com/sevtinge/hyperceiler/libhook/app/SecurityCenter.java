@@ -81,7 +81,7 @@ public class SecurityCenter extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         // 应用管理
         initHook(new AppDefaultSort(), PrefsBridge.getStringAsInt("security_center_app_default_sort", 0) > 0);
         initHook(new AppRestrict(), PrefsBridge.getBoolean("security_center_app_restrict"));

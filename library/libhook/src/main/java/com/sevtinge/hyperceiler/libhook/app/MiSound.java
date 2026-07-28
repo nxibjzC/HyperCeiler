@@ -29,7 +29,7 @@ public class MiSound extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new NewAutoSEffSwitch(), PrefsBridge.getBoolean("misound_bluetooth"));
         initHook(IncreaseSamplingRate.INSTANCE, PrefsBridge.getBoolean("misound_increase_sampling_rate"));
     }

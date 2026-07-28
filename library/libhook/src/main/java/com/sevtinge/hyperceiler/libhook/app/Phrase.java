@@ -31,7 +31,7 @@ public class Phrase extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new NewUnPhraseLimit(), PrefsBridge.getBoolean("various_phrase_clipboardlist"));
         initHook(new UnlockImeClipboardFix(), !InputMethodConfig.getSelectedInputMethodPackages().isEmpty());
     }

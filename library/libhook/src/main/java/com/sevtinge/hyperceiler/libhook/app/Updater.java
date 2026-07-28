@@ -35,7 +35,7 @@ public class Updater extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         if (PrefsBridge.getBoolean("updater_enable_miui_version")) {
             if (PrefsBridge.getStringAsInt("updater_version_mode", 1) != 1) {
                 initHook(VersionCodeNew.INSTANCE, true);

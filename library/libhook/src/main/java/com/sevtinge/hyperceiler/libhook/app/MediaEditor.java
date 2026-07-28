@@ -35,7 +35,7 @@ public class MediaEditor extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         // AI
         initHook(new UnlockAigc(), PrefsBridge.getBoolean("mediaeditor_unlock_aigc"));
         // 基础

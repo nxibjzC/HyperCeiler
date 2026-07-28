@@ -28,7 +28,7 @@ import com.sevtinge.hyperceiler.libhook.rules.fileexplorer.UnlockFileParse;
 public class FileExplorer extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new UnlockFileParse(), PrefsBridge.getBoolean("file_explorer_unlock_file_parse"));
         initHook(SelectName.INSTANCE, PrefsBridge.getBoolean("file_explorer_can_selectable") || PrefsBridge.getBoolean("file_explorer_is_single_line"));
     }

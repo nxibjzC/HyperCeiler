@@ -28,7 +28,7 @@ import com.sevtinge.hyperceiler.libhook.rules.nfc.DisableSound;
 public class Nfc extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableSound(), PrefsBridge.getBoolean("nfc_disable_sound"));
         initHook(new AllowInformationScreen(), PrefsBridge.getBoolean("nfc_allow_information_screen"));
     }

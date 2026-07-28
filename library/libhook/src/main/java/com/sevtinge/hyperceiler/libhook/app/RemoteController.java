@@ -26,7 +26,7 @@ import com.sevtinge.hyperceiler.libhook.rules.remotecontroller.DisableAd;
 @HookBase(targetPackage = "com.duokan.phone.remotecontroller")
 public class RemoteController extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableAd(), PrefsBridge.getBoolean("remotecontroller_disable_ad"));
     }
 }

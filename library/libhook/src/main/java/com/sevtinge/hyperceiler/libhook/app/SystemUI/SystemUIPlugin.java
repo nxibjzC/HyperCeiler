@@ -26,7 +26,7 @@ import com.sevtinge.hyperceiler.common.utils.PrefsBridge;
 @HookBase(targetPackage = "miui.systemui.plugin")
 public class SystemUIPlugin extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(FlashLightNotificationColor.INSTANCE, PrefsBridge.getBoolean("system_ui_control_center_opt_notification_element_background_color"));
     }
 }

@@ -29,7 +29,7 @@ public class Analytics extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new FuckMiuiUpload(), PrefsBridge.getBoolean("analytics_fuck_guard"));
     }
 }

@@ -38,7 +38,7 @@ import com.sevtinge.hyperceiler.libhook.rules.gallery.UnPrivacyWatermark;
 public class Gallery extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new LongerTrashbinTime(), PrefsBridge.getBoolean("gallery_longer_trashbin_time"));
         initHook(new UnPrivacyWatermark(), PrefsBridge.getBoolean("gallery_enable_un_privacy_watermark"));
         initHook(new EnableHdrEnhance(), PrefsBridge.getBoolean("gallery_enable_hdr_enhanced"));

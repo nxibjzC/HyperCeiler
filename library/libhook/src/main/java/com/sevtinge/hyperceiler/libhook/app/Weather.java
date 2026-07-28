@@ -28,7 +28,7 @@ import com.sevtinge.hyperceiler.libhook.rules.weather.UnlockSuperBlur;
 @HookBase(targetPackage = "com.miui.weather2")
 public class Weather extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new SetCardLightDarkMode(), PrefsBridge.getStringAsInt("weather_card_display_type", 0) != 0);
         initHook(new SetDeviceLevel(), PrefsBridge.getStringAsInt("weather_device_level", 3) != 3);
         initHook(UnlockSuperBlur.INSTANCE, PrefsBridge.getBoolean("weather_unlock_blur"));

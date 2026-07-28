@@ -30,7 +30,7 @@ import com.sevtinge.hyperceiler.common.utils.PrefsBridge;
 public class Barrage extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(AnyBarrage.INSTANCE, PrefsBridge.getBoolean("barrage_any_barrage"));
         initHook(BarrageNotTouchable.INSTANCE, PrefsBridge.getBoolean("barrage_not_touchable"));
         initHook(GlobalBarrage.INSTANCE, PrefsBridge.getBoolean("barrage_global_enable"));

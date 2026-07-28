@@ -34,7 +34,7 @@ import com.sevtinge.hyperceiler.libhook.rules.phone.ViceSlotVolteButton;
 @HookBase(targetPackage = "com.android.phone")
 public class Phone extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new UnlockVoiceLink(), PrefsBridge.getBoolean("phone_unlock_voice_link"));
         initHook(ModemFeature.INSTANCE, PrefsBridge.getBoolean("phone_smart_dual_sim"));
         initHook(ViceSlotVolteButton.INSTANCE, PrefsBridge.getBoolean("phone_vice_slot_volte"));

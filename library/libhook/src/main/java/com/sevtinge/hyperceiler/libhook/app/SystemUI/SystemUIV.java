@@ -137,6 +137,11 @@ public class SystemUIV extends BaseLoad {
 
     @Override
     public void onPackageLoaded() {
+        initHook(DisableMiuiMultiWinSwitch.INSTANCE, PrefsBridge.getBoolean("system_ui_disable_miui_multi_win_switch"));
+    }
+
+    @Override
+    public void onPackageReady() {
         MiuiStub.createHook();
         // PluginHelper
         initHook(NewPluginHelperKt.INSTANCE);
@@ -275,7 +280,6 @@ public class SystemUIV extends BaseLoad {
         initHook(new MonetThemeOverlay(), PrefsBridge.getBoolean("system_ui_monet_overlay_custom"));
         initHook(new BrightnessPct(), PrefsBridge.getBoolean("system_showpct_title"));
         initHook(new NotificationFreeform(), PrefsBridge.getBoolean("system_ui_notification_freeform"));
-        initHook(DisableMiuiMultiWinSwitch.INSTANCE, PrefsBridge.getBoolean("system_ui_disable_miui_multi_win_switch"));
         initHook(RemoveMiuiMultiWinSwitch.INSTANCE, PrefsBridge.getBoolean("system_ui_remove_miui_multi_win_switch"));
         initHook(DisableBottomBar.INSTANCE, PrefsBridge.getBoolean("system_ui_disable_bottombar"));
         initHook(UnlockClipboard.INSTANCE, PrefsBridge.getBoolean("system_ui_unlock_clipboard"));

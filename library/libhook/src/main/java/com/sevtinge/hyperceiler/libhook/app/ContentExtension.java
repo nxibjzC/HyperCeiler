@@ -33,7 +33,7 @@ import com.sevtinge.hyperceiler.libhook.rules.contentextension.UseThirdPartyBrow
 public class ContentExtension extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new UseThirdPartyBrowser(), PrefsBridge.getBoolean("content_extension_browser"));
         initHook(new DoublePress(), PrefsBridge.getBoolean("content_extension_double_press"));
         initHook(new Taplus(), PrefsBridge.getBoolean("security_center_taplus"));

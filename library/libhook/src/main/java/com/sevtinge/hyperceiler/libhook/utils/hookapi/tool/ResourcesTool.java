@@ -241,14 +241,19 @@ public class ResourcesTool {
         if (resourcesLoader == null) {
             synchronized (this) {
                 if (resourcesLoader == null) {
-                    try (ParcelFileDescriptor pfd = ParcelFileDescriptor.open(
-                        new File(mModulePath), ParcelFileDescriptor.MODE_READ_ONLY)) {
+                    File apkFile = new File(mModulePath);
+                    if (!apkFile.exists() || !apkFile.canRead()) {
+                        XposedLog.w(TAG, "Cannot read module APK for resource loading: " + mModulePath);
+                        return false;
+                    }
+                    try (ParcelFileDescriptor pfd = ParcelFileDescriptor.open(apkFile, ParcelFileDescriptor.MODE_READ_ONLY)) {
+                        if (pfd == null) return false;
                         ResourcesProvider provider = ResourcesProvider.loadFromApk(pfd);
                         ResourcesLoader loader = new ResourcesLoader();
                         loader.addProvider(provider);
                         resourcesLoader = loader;
                     } catch (IOException ex) {
-                        XposedLog.e(TAG, "Failed to add resource! debug: above api 30.", ex);
+                        XposedLog.e(TAG, "Failed to load module resources via ResourcesLoader", ex);
                         return false;
                     }
                 }
@@ -286,6 +291,9 @@ public class ResourcesTool {
                 XposedLog.e(TAG, "Failed to add loaders!", ex);
                 return false;
             }
+        } catch (Throwable t) {
+            XposedLog.e(TAG, "Critical error adding loaders", t);
+            return false;
         }
         return true;
     }
@@ -301,7 +309,7 @@ public class ResourcesTool {
             addAssetPath.setAccessible(true);
             Integer cookie = (Integer) addAssetPath.invoke(assets, mModulePath);
             if (cookie == null || cookie == 0) {
-                XposedLog.w(TAG, "Method 'addAssetPath' result 0, maybe load res failed!");
+                XposedLog.w(TAG, "Method 'addAssetPath' result 0");
                 return false;
             }
         } catch (Throwable ex) {
@@ -473,11 +481,11 @@ public class ResourcesTool {
                     try {
                         resources.addLoaders(loader);
                     } catch (Throwable restoreError) {
-                        XposedLog.w(TAG, "Failed to restore ResourcesLoader after detach failure", restoreError);
+                        XposedLog.w(TAG, "Failed to restore ResourcesLoader", restoreError);
                     }
                 }
                 throw new IllegalStateException(
-                    "Unable to detach the old module ResourcesLoader before hot reload",
+                    "Unable to detach the old module ResourcesLoader",
                     firstFailure
                 );
             }
@@ -591,16 +599,16 @@ public class ResourcesTool {
     private Object convertResultType(String methodName, Object value) {
         return switch (methodName) {
             case "getInteger", "getColor", "getDimensionPixelOffset", "getDimensionPixelSize" ->
-                value instanceof Number ? Math.round(((Number) value).floatValue()) : null;
+                value instanceof Number number ? Math.round(number.floatValue()) : null;
 
             case "getDimension", "getFloat" ->
-                value instanceof Number ? ((Number) value).floatValue() : null;
+                value instanceof Number number ? number.floatValue() : null;
 
             case "getText" ->
-                value instanceof CharSequence ? value : null;
+                value instanceof CharSequence sequence ? sequence : null;
 
             case "getBoolean" ->
-                value instanceof Boolean ? value : null;
+                value instanceof Boolean bool ? bool : null;
 
             default -> value;
         };

@@ -36,7 +36,7 @@ public class VariousSystemApps extends BaseLoad {
     boolean isMiuiApps;
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         mPackageName = getPackageName();
         isMiuiApps = mPackageName.startsWith("com.miui") || mPackageName.startsWith("com.xiaomi") || miuiDialogCustomApps.contains(mPackageName);
         initHook(new DialogCustom(), isMiuiDialogCustom());

@@ -30,7 +30,7 @@ import com.sevtinge.hyperceiler.libhook.rules.lbe.PasteToast;
 public class Lbe extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new AutoStart(), PrefsBridge.getBoolean("lbe_auto_start"));
 
         // paste toast

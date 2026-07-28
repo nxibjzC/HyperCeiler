@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.downloads.RemoveXlDownload;
 public class Downloads extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(RemoveXlDownload.INSTANCE, PrefsBridge.getBoolean("various_fuck_xlDownload"));
     }
 }

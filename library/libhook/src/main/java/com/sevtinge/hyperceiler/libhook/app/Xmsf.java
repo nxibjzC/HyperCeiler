@@ -26,7 +26,7 @@ import com.sevtinge.hyperceiler.libhook.rules.xmsf.UnlockFoucsAuth;
 @HookBase(targetPackage = "com.xiaomi.xmsf")
 public class Xmsf extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(UnlockFoucsAuth.INSTANCE, PrefsBridge.getBoolean("xmsf_unlock_foucs_app_sign_white_list"));
     }
 }

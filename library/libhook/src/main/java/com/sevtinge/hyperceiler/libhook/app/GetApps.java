@@ -31,7 +31,7 @@ import com.sevtinge.hyperceiler.libhook.rules.getapps.DisableStartPushDialog;
 public class GetApps extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new BypassRiskCheck(), PrefsBridge.getBoolean("market_bypass_risk_check"));
         initHook(new DisableAds(), PrefsBridge.getBoolean("market_disable_ads"));
         initHook(new DeviceModify(), PrefsBridge.getStringAsInt("market_device_modify_new", 0) != 0);

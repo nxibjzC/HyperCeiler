@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.common.utils.PrefsBridge;
 public class TsmClient extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(AutoNfc.INSTANCE, PrefsBridge.getBoolean("tsmclient_auto_nfc"));
     }
 }

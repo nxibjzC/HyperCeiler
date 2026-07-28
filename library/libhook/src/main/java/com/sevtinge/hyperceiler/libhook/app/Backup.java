@@ -28,7 +28,7 @@ import com.sevtinge.hyperceiler.libhook.rules.backup.UnlockBrokenScreenBackup;
 public class Backup extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new UnlockBrokenScreenBackup(), PrefsBridge.getBoolean("backup_unlock_broken_screen_backup"));
         initHook(new AllowBackupAllApps(), PrefsBridge.getBoolean("backup_allow_all_apps"));
     }

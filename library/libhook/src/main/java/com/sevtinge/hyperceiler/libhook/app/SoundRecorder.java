@@ -29,7 +29,7 @@ import com.sevtinge.hyperceiler.libhook.rules.soundrecorder.UnlockRecordingScene
 @HookBase(targetPackage = "com.android.soundrecorder")
 public class SoundRecorder extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableAiWatermark(), PrefsBridge.getBoolean("sound_recorder_disable_ai_watermark"));
         initHook(UnlockRecordingScene.INSTANCE, PrefsBridge.getBoolean("sound_recorder_unlock_recording_scene"));
         initHook(UnlockAIMode.INSTANCE, PrefsBridge.getBoolean("sound_recorder_unlock_ai"));

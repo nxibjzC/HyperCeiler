@@ -38,6 +38,7 @@ import java.util.concurrent.Future;
 import java.util.function.BooleanSupplier;
 
 import io.github.libxposed.api.XposedInterface;
+import io.github.libxposed.api.XposedModuleInterface.PackageLoadedParam;
 import io.github.libxposed.api.XposedModuleInterface.PackageReadyParam;
 import io.github.libxposed.api.XposedModuleInterface.SystemServerStartingParam;
 import io.github.lingqiqi5211.ezhooktool.xposed.EzXposed;
@@ -67,6 +68,9 @@ public abstract class BaseLoad {
     public static ResourcesTool mResHook;
     private boolean mDexKitSessionPrepared = false;
     private final List<BaseHook> mPendingDexKitHooks = new ArrayList<>();
+
+    private boolean mPackageLoadedExecuted = false;
+    private boolean mPackageReadyExecuted = false;
 
     private record DexKitInitResult(BaseHook hook, boolean shouldInit, Throwable error) {
     }
@@ -196,13 +200,43 @@ public abstract class BaseLoad {
         }
     }
 
-    public abstract void onPackageLoaded();
+    public void onPackageLoaded() {}
+
+    public abstract void onPackageReady();
 
     /**
-     * 加载普通应用 Hook
+     * 加载早期包 Hook (onPackageLoaded)
+     */
+    public void onLoad(PackageLoadedParam lpparam) {
+        if (lpparam == null || mPackageLoadedExecuted) return;
+        mPackageLoadedExecuted = true;
+        XposedLog.d("BaseLoad", "onLoad(PackageLoadedParam): " + lpparam.getPackageName());
+
+        synchronized (sLock) {
+            sClassLoader = lpparam.getDefaultClassLoader();
+            sPackageName = lpparam.getPackageName();
+            sLpparam = null;
+            sSystemServerParam = null;
+            sCurrentHookTag = this.getClass().getSimpleName();
+            mResHook = ResourcesTool.getInstance(getXposed().getModuleApplicationInfo().sourceDir);
+        }
+
+        try {
+            onPackageLoaded();
+        } catch (Throwable t) {
+            // 异常隔离：极早期 Hook 失败不应中断整个事务
+            XposedLog.e(getTag(), "onPackageLoaded execution failed", t);
+            recordHookInitializationFailure(getTag() + ".onPackageLoaded", t);
+        }
+    }
+
+    /**
+     * 加载标准应用 Hook (onPackageReady)
      */
     public void onLoad(PackageReadyParam lpparam) {
-        if (lpparam == null) return;
+        if (lpparam == null || mPackageReadyExecuted) return;
+        mPackageReadyExecuted = true;
+        XposedLog.d("BaseLoad", "onLoad(PackageReadyParam): " + lpparam.getPackageName());
 
         synchronized (sLock) {
             sClassLoader = lpparam.getClassLoader();
@@ -215,7 +249,12 @@ public abstract class BaseLoad {
             mPendingDexKitHooks.clear();
         }
 
-        loadModuleResources();
+        // 异常隔离：资源加载失败不应导致后续业务 Hook 被跳过
+        try {
+            loadModuleResources();
+        } catch (Throwable t) {
+            XposedLog.e(getTag(), "loadModuleResources failed", t);
+        }
         executeHook();
     }
 
@@ -223,7 +262,9 @@ public abstract class BaseLoad {
      * 加载 SystemServer Hook
      */
     public void onLoad(SystemServerStartingParam lpparam) {
-        if (lpparam == null) return;
+        if (lpparam == null || mPackageReadyExecuted) return;
+        mPackageReadyExecuted = true;
+        XposedLog.d("BaseLoad", "onLoad(SystemServerStartingParam)");
 
         synchronized (sLock) {
             sClassLoader = lpparam.getClassLoader();
@@ -254,7 +295,11 @@ public abstract class BaseLoad {
                 boolean isAndroid = SYSTEM_SERVER.equals(pkgName);
                 ContextUtils.getWaitContext(context -> {
                     if (context != null) {
-                        mResHook.loadModuleRes(context);
+                        try {
+                            mResHook.loadModuleRes(context);
+                        } catch (Throwable t) {
+                            XposedLog.e(getTag(), "loadModuleRes (async) failed", t);
+                        }
                     }
                 }, isAndroid);
             }
@@ -265,7 +310,10 @@ public abstract class BaseLoad {
 
     private void executeHook() {
         try {
-            onPackageLoaded();
+            onPackageReady();
+        } catch (Throwable t) {
+            XposedLog.e(getTag(), "onPackageReady execution failed", t);
+            recordHookInitializationFailure(getTag() + ".onPackageReady", t);
         } finally {
             try {
                 flushPendingDexKitHooks();

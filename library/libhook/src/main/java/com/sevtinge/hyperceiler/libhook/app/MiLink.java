@@ -31,7 +31,7 @@ import com.sevtinge.hyperceiler.libhook.rules.milink.UnlockSendApp;
 public class MiLink extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new UnlockMiShare(), PrefsBridge.getBoolean("milink_unlock_mishare"));
         initHook(UnlockSendApp.INSTANCE, PrefsBridge.getBoolean("milink_unlock_send_app"));
         initHook(new DisablePcManagerClipboardRegionCheck(), PrefsBridge.getBoolean("milink_disable_pc_clipboard_region_check"));

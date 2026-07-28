@@ -28,7 +28,7 @@ import com.sevtinge.hyperceiler.libhook.rules.incallui.HideCrbt;
 public class InCallUi extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new HideCrbt(), PrefsBridge.getBoolean("incallui_hide_crbt"));
         initHook(new AnswerInHeadUp(), PrefsBridge.getBoolean("incallui_answer_in_head_up"));
     }

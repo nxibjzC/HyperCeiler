@@ -30,7 +30,7 @@ import com.sevtinge.hyperceiler.libhook.rules.screenrecorder.UnlockMoreVolumeFro
 public class ScreenRecorder extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new ForceSupportPlaybackCapture(), PrefsBridge.getBoolean("screenrecorder_force_support_playback_capture"));
         initHook(UnlockMoreVolumeFromNew.INSTANCE, PrefsBridge.getBoolean("screenrecorder_more_volume"));
         initHook(new ScreenRecorderConfig(), PrefsBridge.getBoolean("screenrecorder_config"));

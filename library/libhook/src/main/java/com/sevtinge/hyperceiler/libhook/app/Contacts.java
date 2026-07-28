@@ -29,7 +29,7 @@ import com.sevtinge.hyperceiler.libhook.rules.contacts.DisableNetworkAssistantOf
 public class Contacts extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableNetworkAssistantOfflineInfoManager(), PrefsBridge.getBoolean("contacts_disable_offline_info_manager"));
         initHook(new BusinessHallAdBlock(), PrefsBridge.getBoolean("contacts_business_hall_ad_block"));
     }

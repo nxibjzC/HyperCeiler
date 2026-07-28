@@ -112,6 +112,11 @@ public class SystemUIB extends BaseLoad {
 
     @Override
     public void onPackageLoaded() {
+        initHook(DisableMiuiMultiWinSwitch.INSTANCE, PrefsBridge.getBoolean("system_ui_disable_miui_multi_win_switch"));
+    }
+
+    @Override
+    public void onPackageReady() {
         MiuiStub.createHook();
         // PluginHelper
         initHook(NewPluginHelperKt.INSTANCE);
@@ -226,7 +231,6 @@ public class SystemUIB extends BaseLoad {
         initHook(new AllowManageAllNotifications(), PrefsBridge.getBoolean("system_framework_allow_manage_all_notifications"));
         initHook(new NotificationFreeform(), PrefsBridge.getBoolean("system_ui_notification_freeform"));
         initHook(new BrightnessPct(), PrefsBridge.getBoolean("system_showpct_title"));
-        initHook(DisableMiuiMultiWinSwitch.INSTANCE, PrefsBridge.getBoolean("system_ui_disable_miui_multi_win_switch"));
         initHook(RemoveMiuiMultiWinSwitch.INSTANCE, PrefsBridge.getBoolean("system_ui_remove_miui_multi_win_switch"));
         initHook(DisableBottomBar.INSTANCE, PrefsBridge.getBoolean("system_ui_disable_bottombar"));
         initHook(UnlockClipboard.INSTANCE, PrefsBridge.getBoolean("system_ui_unlock_clipboard"));

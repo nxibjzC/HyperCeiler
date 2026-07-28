@@ -55,7 +55,7 @@ import com.sevtinge.hyperceiler.common.utils.PrefsBridge;
 public class SystemSettingsV extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         // 首页
         initHook(new HyperCeilerSettings(), PrefsBridge.getStringAsInt("settings_icon", 0) != 0);
         initHook(new InternationalBuild(), PrefsBridge.getBoolean("system_settings_international_build"));

@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.creation.UnlockCreation;
 public class Creation extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(UnlockCreation.INSTANCE, PrefsBridge.getBoolean("creation_unlock_enable"));
     }
 }

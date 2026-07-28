@@ -30,7 +30,7 @@ public class Community extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DeviceModify(), PrefsBridge.getBoolean("community_device_modify"));
         initHook(new FuckDetection(), PrefsBridge.getBoolean("community_fuck_detection"));
     }

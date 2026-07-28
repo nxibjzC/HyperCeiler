@@ -38,7 +38,8 @@ import com.sevtinge.hyperceiler.libhook.rules.packageinstaller.InstallSource;
 public class PackageInstaller extends BaseLoad {
 
 
-    public void onPackageLoaded() {
+    @Override
+    public void onPackageReady() {
 
         //
         /*initHook(new MiuiPackageInstallModify(), PrefsBridge.getBoolean("miui_package_installer_modify"));*/

@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.miwallpaper.UnlockSuperWallpaper;
 public class MiWallpaper extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new UnlockSuperWallpaper(), PrefsBridge.getBoolean("miwallpaper_unlock_super_wallpaper"));
     }
 }

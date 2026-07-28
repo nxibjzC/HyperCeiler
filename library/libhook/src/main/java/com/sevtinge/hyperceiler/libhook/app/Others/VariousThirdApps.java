@@ -56,7 +56,7 @@ public class VariousThirdApps extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         mPackageName = getPackageName();
         boolean isInputMethod = isEnabledInputMethodPackage(mPackageName);
 

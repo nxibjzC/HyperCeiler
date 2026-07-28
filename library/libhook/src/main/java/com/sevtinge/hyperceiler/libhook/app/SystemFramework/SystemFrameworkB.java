@@ -92,7 +92,7 @@ import com.sevtinge.hyperceiler.libhook.rules.systemframework.volume.VolumeSteps
 public class SystemFrameworkB extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         // 核心破解
         initHook(BypassSignCheckForT.INSTANCE,
             (PrefsBridge.getBoolean("system_framework_core_patch_auth_creak") || PrefsBridge.getBoolean("system_framework_core_patch_disable_integrity"))

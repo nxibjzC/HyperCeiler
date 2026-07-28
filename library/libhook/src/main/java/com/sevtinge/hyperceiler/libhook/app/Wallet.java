@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.wallet.DisableSplashAd;
 @HookBase(targetPackage = "com.mipay.wallet")
 public class Wallet extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableSplashAd(), PrefsBridge.getBoolean("wallet_disable_splash_ad"));
     }
 }

@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.aiengine.ChangeBrowserForAIEngine;
 public class AICR extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(ChangeBrowserForAIEngine.INSTANCE, PrefsBridge.getBoolean("aicr_modify_browser_copy"));
     }
 }

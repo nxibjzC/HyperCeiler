@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.mishare.NoAutoTurnOff;
 public class MiShare extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(NoAutoTurnOff.INSTANCE, PrefsBridge.getBoolean("disable_mishare_auto_off")); // 禁用 10 分钟自动关闭
     }
 }

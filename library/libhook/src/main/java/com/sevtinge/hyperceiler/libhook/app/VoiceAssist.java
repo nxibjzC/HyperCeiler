@@ -8,7 +8,7 @@ import com.sevtinge.hyperceiler.libhook.rules.voiceassist.RemoveScreenTransWater
 @HookBase(targetPackage = "com.miui.voiceassist")
 public class VoiceAssist extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new RemoveScreenTransWatermark(), PrefsBridge.getBoolean("voiceassist_remove_screen_trans_watermark"));
     }
 }

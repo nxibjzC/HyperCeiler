@@ -28,7 +28,7 @@ public class SecurityAdd extends BaseLoad {
 
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableGameBoosterAds(), PrefsBridge.getBoolean("securityadd_disable_gb_ads"));
     }
 }

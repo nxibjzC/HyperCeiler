@@ -26,7 +26,7 @@ import com.sevtinge.hyperceiler.libhook.rules.huanji.AllowMoveAllApps;
 @HookBase(targetPackage = "com.miui.huanji")
 public class Huanji extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new AllowMoveAllApps(), PrefsBridge.getBoolean("huanji_allow_all_apps"));
     }
 }

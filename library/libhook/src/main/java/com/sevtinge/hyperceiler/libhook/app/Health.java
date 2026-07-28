@@ -28,7 +28,7 @@ import com.sevtinge.hyperceiler.libhook.rules.health.UnlockFoucsAuth;
 @HookBase(targetPackage = "com.mi.health")
 public class Health extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new DisableSplashAd(), PrefsBridge.getBoolean("health_disable_splash_ad"));
         initHook(UnlockFoucsAuth.INSTANCE, PrefsBridge.getBoolean("health_unlock_foucs_app_sign_white_list"));
     }

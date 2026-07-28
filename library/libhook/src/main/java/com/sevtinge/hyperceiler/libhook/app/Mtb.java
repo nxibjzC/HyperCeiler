@@ -27,7 +27,7 @@ import com.sevtinge.hyperceiler.libhook.rules.mtb.IsUserBuild;
 @HookBase(targetPackage = "com.xiaomi.mtb")
 public class Mtb extends BaseLoad {
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(BypassAuthentication.INSTANCE, PrefsBridge.getBoolean("mtb_auth"));
         initHook(IsUserBuild.INSTANCE, PrefsBridge.getBoolean("mtb_auth"));
     }

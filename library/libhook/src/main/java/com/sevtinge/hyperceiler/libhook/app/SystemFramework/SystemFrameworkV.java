@@ -93,7 +93,7 @@ import com.sevtinge.hyperceiler.libhook.rules.systemsettings.AntiQues;
 public class SystemFrameworkV extends BaseLoad {
 
     @Override
-    public void onPackageLoaded() {
+    public void onPackageReady() {
         initHook(new ModulePackageTrust(), PrefsBridge.getBoolean("home_gesture_enable"));
         initHook(new GlobalActionBootstrap(), PrefsBridge.getBoolean("home_gesture_enable"));
         // initHook(new DisableMiuiWatermark(), PrefsBridge.getBoolean("system_framework_disable_miui_watermark"));
