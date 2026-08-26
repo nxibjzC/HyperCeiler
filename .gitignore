@@ -1,18 +1,47 @@
+# IDEs and editors
+.idea/
+.vscode/
+.fleet/
 *.iml
-.gradle
-/local.properties
-.idea
+*.swp
+*~
+
+# OS metadata
 .DS_Store
+Thumbs.db
+Desktop.ini
+
+# Gradle, Kotlin and Android build state
+.gradle/
+.kotlin/
 build/
-/captures
-.externalNativeBuild
-.cxx
 local.properties
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Packaged application outputs
+*.apk
+*.aab
+*.apks
+
+# Local signing credentials
+signing.properties
+*.jks
+*.keystore
+
+# Local diagnostics and reverse-engineering artifacts
+/.artifacts/
+*.log
+hs_err_pid*
+replay_pid*
+
+# Legacy/local generated module directories
+/library/hook/
+
+# Manually collected app variants
 /app/release/*
 !/app/release/keepRules
-/app/beta
-/app/canary
-/app/debug
-signing.properties
-/.kotlin
-/library/hook
+/app/beta/
+/app/canary/
+/app/debug/
