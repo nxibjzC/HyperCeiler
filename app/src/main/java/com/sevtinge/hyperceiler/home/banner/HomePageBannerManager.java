@@ -18,7 +18,6 @@ import android.os.SystemClock;
 import com.sevtinge.hyperceiler.R;
 import com.sevtinge.hyperceiler.common.log.AndroidLog;
 import com.sevtinge.hyperceiler.common.log.LoggerHealthChecker;
-import com.sevtinge.hyperceiler.expansion.utils.SignUtils;
 import com.sevtinge.hyperceiler.libhook.safecrash.CrashScope;
 import com.sevtinge.hyperceiler.utils.FrameworkStatusManager;
 
@@ -179,13 +178,6 @@ public class HomePageBannerManager {
     }
 
     private static BannerBean createWarningBannerIfNeeded(Context context) {
-        if (!SignUtils.isSignCheckPass(context)) {
-            return createWarningBanner(
-                "warning_sign",
-                context.getString(R.string.headtip_warn_sign_verification_failed),
-                null
-            );
-        }
         if (isUnofficialRom(context)) {
             return createWarningBanner(
                 "warning_rom",

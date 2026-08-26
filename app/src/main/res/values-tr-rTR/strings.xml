@@ -88,7 +88,6 @@
     <string name="headtip_warn_not_offical_rom">Şu anki kullandığınız ROM\'un kaynağı resmi Xiaomi ROM\'u olmayabilir, ve bazı özellikler çalışmayabilir. Lütfen detaylı bilgi için tedarikçiniz ile iletişime geçin.</string>
     <string name="headtip_warn_unsupport_xposed">Su anda kullandiginiz Xposed cercevesi bazi ozelliklerin duzgun calismamasina neden olabilir. Bu sorunlarla karsilasirsaniz, farkli bir Xposed surumu deneyin ve sorunun devam edip etmedigini kontrol edin.</string>
     <string name="headtip_warn_unsupport_sysver">Mevcut cihaz, HyperCeiler islevlerinde sorunlara neden olabilecek, tam olarak uyarlanmis olmayan bir sistem surumunde calisiyor.</string>
-    <string name="headtip_warn_sign_verification_failed">İmza doğrulaması başarısız oldu, ve kullandığınız sürüm HyperCeiler\'in resmi sürümü olmayabilir, ve zararlı kod içerebilir.</string>
     <string name="headtip_tip_auto_safe_mode">Guvenli mod, guvenligi saglamak icin bazi uygulamalar birden cok kez coktugunde zamaninda hook\'u kaldirabilir. Bu ozelligin calismasi icin System Framework kanca kapsami gerekir. Guvenli modu acmak icin System Framework kapsamini isaretlemenizi siddetle oneririz.</string>
     <string name="headtip_tip_long_press_to_copy">Metni uzun basarak veya cift dokunarak secebilir ya da kopyalayip gelistiriciye gonderebilirsiniz.</string>
     <string name="happy_birthday_hyperceiler">Bugun HyperCeiler\'in dogum gunu!\nGecen yilki desteginiz icin tesekkurler, bu yil da birlikte calismaya devam edelim!</string>

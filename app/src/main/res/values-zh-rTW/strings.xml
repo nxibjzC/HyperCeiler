@@ -91,7 +91,6 @@
     <string name="headtip_warn_unsupport_xposed">目前框架 %1$s 的 Xposed API 版本為 %2$d，低於 HyperCeiler 要求的 %3$d，相關模組功能已停止載入。點按查看詳情。</string>
     <string name="headtip_warn_framework_service_error">HyperCeiler 無法透過 XposedService 讀取目前框架資訊，相關模組功能已出於安全原因停止載入。點按查看詳情。</string>
     <string name="headtip_warn_unsupport_sysver">當前設備運行的系統版本未 （完全） 適配，HyperCeiler 功能可能存在異常。</string>
-    <string name="headtip_warn_sign_verification_failed">簽名校驗失敗，您當前使用的版本可能並非來自於 HyperCeiler 官方的版本，可能包含惡意代碼，請注意使用安全。</string>
     <string name="headtip_tip_auto_safe_mode">主動安全模式可以在部分應用多次崩潰時及時取消 hook 以確保安全。 該功能需要 hook 作用域「系統框架」來運行，我們十分建議您勾選作用域「系統框架」以啟動和運行主動安全模式。</string>
     <string name="headtip_tip_long_press_to_copy">您可以長按或按兩下後選擇文字進行操作，或者複製並反饋給開發者。</string>
     <string name="happy_birthday_hyperceiler">今天是 HyperCeiler 的生日！\n感謝與您歲月相伴之恩，願來年再續前緣，共赴風雨，攜手並進！</string>

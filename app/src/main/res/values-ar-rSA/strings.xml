@@ -88,7 +88,6 @@
     <string name="headtip_warn_not_offical_rom">قد لا يكون مصدر الروم الذي تستخدمه إصدارًا رسميًا من شاومي، وقد لا تعمل بعض الميزات. يُرجى التواصل مع المورّد الخاص بك للحصول على مزيد من التفاصيل.</string>
     <string name="headtip_warn_unsupport_xposed">إصدار Lsposed الذي تستخدمه حاليا يمكن ان يسبب عطل في المميزات، إذا واجهتك أي من تلك المشاكل، جرب استخدم اصدار اخر من Lsposed.</string>
     <string name="headtip_warn_unsupport_sysver">الجهاز الحالي يعمل على إصدار نظام غير متوافق (تمامًا)، مما قد يؤدي إلى ظهور أخطاء في وظائف HyperCeiler.</string>
-    <string name="headtip_warn_sign_verification_failed">فشلت عملية التحقق من التوقيع، وقد لا يكون الإصدار الحالي الذي تستخدمه الإصدار الرسمي لـ HyperCeiler، وقد يحتوي على تعليمات برمجية ضارة.</string>
     <string name="headtip_tip_auto_safe_mode">يمكن للوضع الآمن فصل بعض التطبيقات بسرعة عندما تتعطل عدة مرات لضمان الأمان. تتطلب هذه الميزة نطاق ربط إطار عمل النظام لتعمل. نوصي بشدة بالتحقق من نطاق إطار عمل النظام لتفعيل الوضع الآمن.</string>
     <string name="headtip_tip_long_press_to_copy">يمكنك تحديد النص بعد الضغط عليه مطولاً أو مرتين، أو نسخه وإرساله مرة أخرى إلى المطور.</string>
     <string name="happy_birthday_hyperceiler">اليوم هو عيد ميلاد HyperCeiler!\nشكرًا لدعمكم طوال العام الماضي، ولنستمر معًا في العمل هذا العام!</string>

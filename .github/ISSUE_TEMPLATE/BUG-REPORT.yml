@@ -12,12 +12,10 @@ body:
       label: Notice | 须知
       description: |
         Make sure that all necessary options have been followed; otherwise, the issue will be closed without any reason.
-        Before submitting an issue, confirm that the latest CI version released by [HyperCeiler | Canary Test](https://t.me/cemiuiler_canary) is currently available.
-        Or the latest debug version from the main branch in the GitHub Actions of this project.
+        Before submitting an issue, confirm it still occurs in the latest RhythmCeiler release or the latest main-branch build from this project's GitHub Actions.
         
         请确认已经遵守所有必选项，否则将被无理由直接关闭 Issue。
-        提交 Issue 前请确认当前为[HyperCeiler | Canary Test](https://t.me/cemiuiler_canary)发布的最新版 CI。
-        或者本项目 GitHub Actions 下 main 分支最新构建的 Debug 版本。
+        提交 Issue 前请确认问题在 RhythmCeiler 最新 Release，或本项目 GitHub Actions 下 main 分支最新构建中仍然存在。
       options:
         - label: |
             I confirm that this issue still exists in the latest version | 
@@ -48,13 +46,13 @@ body:
   - type: textarea
     id: log
     attributes:
-      label: "HyperCeiler logs | HyperCeiler 日志"
+      label: "RhythmCeiler logs | RhythmCeiler 日志"
       description: |
-        Provide relevant logs from HyperCeiler. These logs are essential for identifying the issue. 
-        You can find it at HyperCeiler Settings - Log Viewer - ··· - Export Logs.
-        请提供来自 HyperCeiler 的相关日志。这些日志对于定位问题至关重要。
-        您可以在 HyperCeiler 设置 - 查看日志 - ··· - 导出日志 找到它。
-      placeholder: Paste logs from HyperCeiler or crash logs here
+        Provide relevant logs from RhythmCeiler. These logs are essential for identifying the issue.
+        You can find it at RhythmCeiler Settings - Log Viewer - ··· - Export Logs.
+        请提供来自 RhythmCeiler 的相关日志。这些日志对于定位问题至关重要。
+        您可以在 RhythmCeiler 设置 - 查看日志 - ··· - 导出日志 找到它。
+      placeholder: Paste logs from RhythmCeiler or crash logs here
     validations:
       required: true
 
@@ -81,4 +79,3 @@ body:
         上传问题截图以便我们快速定位。
     validations:
       required: false
-

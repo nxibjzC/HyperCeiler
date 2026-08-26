@@ -2,13 +2,18 @@
 
 <img src="\imgs\icon.webp" width="160" height="160" style="display: block; margin: 0 auto;" alt="icon" />
 
-# HyperCeiler
+# RhythmCeiler
 
-### Make HyperOS Great Again!
+### 面向音游体验持续维护的 HyperCeiler 分支
 
 简体中文&nbsp;&nbsp;|&nbsp;&nbsp;[繁體中文](/README_zh-HK.md)&nbsp;&nbsp;|&nbsp;&nbsp;[English](/README_en-US.md)&nbsp;&nbsp;|&nbsp;&nbsp;[Українська](/README_uk_UA.md)&nbsp;&nbsp;|&nbsp;&nbsp;[Português (Brasil)](/README_pt-BR.md)
 
 </div>
+
+> [!IMPORTANT]
+> RhythmCeiler 是基于 [HyperCeiler](https://github.com/ReChronoRain/HyperCeiler) 的独立维护分支，重点维护和更新音游、低延迟及相关系统体验功能，并持续同步上游改进。
+> 本项目沿用 `com.sevtinge.hyperceiler` 包名，作为原版的替代安装版本；请只从本仓库的 Releases 或 Actions 获取安装包。
+> 由于发布证书不同，Android 默认不允许从原版直接覆盖安装；可先启用项目内的软件包签名校验绕过功能再切换，或卸载原版后安装。安装 RhythmCeiler 后，使用相同维护版密钥签名的后续版本可以正常覆盖升级。
 
 ## 当前支持的版本
 
@@ -16,7 +21,7 @@ Android 15-16 的 HyperOS
 
 ## 使用前说明
 
-请在 [LSPosed](https://github.com/LSPosed/LSPosed/releases) 中启用 HyperCeiler，然后在 HyperCeiler 应用内启用对应的功能，重启作用域（需要 Root 权限）。
+请在 [LSPosed](https://github.com/LSPosed/LSPosed/releases) 中启用 RhythmCeiler，然后在 RhythmCeiler 应用内启用对应的功能，重启作用域（需要 Root 权限）。
 
 本模块<b>不支持</b>`修改较多的第三方 Xiaomi HyperOS ROM`、`修改较多的系统软件`，以及`部分国际 Xiaomi HyperOS ROM`。
 

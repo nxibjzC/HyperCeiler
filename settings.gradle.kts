@@ -64,7 +64,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HyperCeiler"
+rootProject.name = "RhythmCeiler"
 
 include(
     "app",

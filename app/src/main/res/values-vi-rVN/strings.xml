@@ -88,7 +88,6 @@
     <string name="headtip_warn_not_offical_rom">Nguồn ROM bạn đang sử dụng có thể không phải là ROM chính thức của Xiaomi và một số tính năng có thể không hoạt động. Vui lòng liên hệ với nhà cung cấp của bạn để biết thêm chi tiết.</string>
     <string name="headtip_warn_unsupport_xposed">1$s đang sử dụng API Xposed %2$d, nhưng HyperCeiler yêu cầu API %3$d trở lên. Các tính năng của mô-đun đã bị tắt. Nhấn để xem chi tiết.</string>
     <string name="headtip_warn_unsupport_sysver">Thiết bị hiện tại đang chạy trên phiên bản hệ thống chưa được điều chỉnh (hoàn toàn), điều này có thể dẫn đến những bất thường trong chức năng của HyperCeiler.</string>
-    <string name="headtip_warn_sign_verification_failed">Xác minh chữ ký không thành công và phiên bản hiện tại bạn đang sử dụng có thể không phải là phiên bản chính thức của HyperCeiler và có thể chứa mã độc hại.</string>
     <string name="headtip_tip_auto_safe_mode">Chế độ an toàn có thể gỡ bỏ một số ứng dụng kịp thời khi chúng bị sập nhiều lần để đảm bảo an toàn. Tính năng này yêu cầu phạm vi hook của System Framework để chạy. Chúng tôi đặc biệt khuyên bạn nên kiểm tra phạm vi System Framework để bật Chế độ an toàn.</string>
     <string name="headtip_tip_long_press_to_copy">Bạn có thể chọn văn bản sau khi nhấn lâu hoặc nhấn đúp, hoặc sao chép và gửi lại cho nhà phát triển.</string>
     <string name="happy_birthday_hyperceiler">Hôm nay là sinh nhật của HyperCeiler!\nCảm ơn sự ủng hộ của bạn trong năm qua và chúng ta hãy tiếp tục hợp tác trong năm nay nhé!</string>
