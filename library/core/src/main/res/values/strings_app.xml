@@ -1811,4 +1811,14 @@
     <string name="custom_hook_mode">Select mode</string>
     <string name="open_source">Open source projects</string>
     <string name="close_source">Close source projects</string>
+    <string name="rhythm_latency_title">Rhythm game low latency (experimental)</string>
+    <string name="rhythm_latency_desc">System-side rhythm game tuning. Enables the stock, time-limited gesture scheduler for selected games, with optional Xiaomi touch HAL diagnostics. Never injects into game processes.</string>
+    <string name="rhythm_latency_paradigm">Paradigm: Reboot</string>
+    <string name="rhythm_latency_target_apps">Target rhythm games</string>
+    <string name="rhythm_latency_target_apps_desc">%1$d apps selected. Tap to choose any installed launchable rhythm game; restart the system or hot-reload system after changes.</string>
+    <string name="rhythm_latency_target_apps_desc_default">Tap to choose installed rhythm games; restart the system or hot-reload system after changes.</string>
+    <string name="rhythm_latency_touch_diagnostics">Touch pipeline diagnostics</string>
+    <string name="rhythm_latency_touch_diagnostics_desc">Log the package, mode, value and HAL result sent through Xiaomi TouchService. Does not change touch parameters.</string>
+    <string name="rhythm_latency_rt_touch_boost">Touch response scheduling</string>
+    <string name="rhythm_latency_rt_touch_boost_desc">Add selected games to Xiaomi RTMode. On touch, the stock scheduler briefly boosts the app main/render threads and restores them after its original timeout.</string>
 </resources>

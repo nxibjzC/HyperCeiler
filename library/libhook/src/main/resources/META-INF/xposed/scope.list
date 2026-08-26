@@ -55,6 +55,7 @@ com.xiaomi.aiasst.vision
 com.xiaomi.aicr
 com.xiaomi.barrage
 com.xiaomi.joyose
+com.xiaomi.touchservice
 com.xiaomi.market
 com.xiaomi.mirror
 com.xiaomi.misettings
@@ -69,4 +70,3 @@ com.miui.voicetrigger
 com.xiaomi.simactivate.service
 miui.systemui.plugin
 com.xiaomi.xmsf
-

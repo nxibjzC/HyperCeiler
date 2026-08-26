@@ -19,7 +19,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:myLocation="@string/joyose"
-    app:quick_restart="com.xiaomi.joyose">
+    app:quick_restart="system">
     <PreferenceCategory android:title="@string/joyose_cloud_control_title">
         <SwitchPreference
             android:title="@string/joyose_disable_cloud_control"
@@ -34,6 +34,36 @@
             android:summary="@string/joyose_enable_gpu_tuner_desc"
             android:key="prefs_key_joyose_enable_gpu_tuner"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/rhythm_latency_title">
+        <SwitchPreference
+            android:key="prefs_key_rhythm_latency_enable"
+            android:defaultValue="false"
+            android:summary="@string/rhythm_latency_desc"
+            android:title="@string/rhythm_latency_title" />
+
+        <Preference
+            android:key="prefs_key_rhythm_latency_target_apps"
+            android:dependency="prefs_key_rhythm_latency_enable"
+            android:persistent="false"
+            android:summary="@string/rhythm_latency_target_apps_desc_default"
+            android:title="@string/rhythm_latency_target_apps" />
+
+        <SwitchPreference
+            android:key="prefs_key_rhythm_latency_touch_diagnostics"
+            android:defaultValue="false"
+            android:dependency="prefs_key_rhythm_latency_enable"
+            android:summary="@string/rhythm_latency_touch_diagnostics_desc"
+            android:title="@string/rhythm_latency_touch_diagnostics" />
+
+        <SwitchPreference
+            android:key="prefs_key_rhythm_latency_rt_touch_boost"
+            android:defaultValue="true"
+            android:dependency="prefs_key_rhythm_latency_enable"
+            android:summary="@string/rhythm_latency_rt_touch_boost_desc"
+            android:title="@string/rhythm_latency_rt_touch_boost" />
 
     </PreferenceCategory>
 

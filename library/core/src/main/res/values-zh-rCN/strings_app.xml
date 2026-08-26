@@ -1771,4 +1771,14 @@
     <string name="custom_hook_mode">选择模式</string>
     <string name="open_source">开源项目</string>
     <string name="close_source">闭源项目</string>
+    <string name="rhythm_latency_title">音游低延迟（实验性）</string>
+    <string name="rhythm_latency_desc">从系统侧优化目标音游：启用原厂限时手势调度，并提供可选的触控 HAL 诊断；不注入或修改游戏进程。</string>
+    <string name="rhythm_latency_paradigm">范式：起源</string>
+    <string name="rhythm_latency_target_apps">目标音游</string>
+    <string name="rhythm_latency_target_apps_desc">已选择 %1$d 个应用；点按可选择任意已安装、可启动的音游，修改后需重启系统或热重载 system。</string>
+    <string name="rhythm_latency_target_apps_desc_default">点按选择已安装的音游；修改后需重启系统或热重载 system。</string>
+    <string name="rhythm_latency_touch_diagnostics">触控链路诊断</string>
+    <string name="rhythm_latency_touch_diagnostics_desc">记录小米触控服务收到的包名、模式、数值和 HAL 返回值，不修改触控参数。</string>
+    <string name="rhythm_latency_rt_touch_boost">触控响应调度</string>
+    <string name="rhythm_latency_rt_touch_boost_desc">将目标音游加入小米 RTMode；触摸时由原厂调度器短暂提升应用主线程和渲染线程，并按原厂超时自动恢复。</string>
 </resources>

@@ -78,6 +78,7 @@ import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.NativeFileP
 import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.NoAccessDeviceLogsRequest;
 import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.PstedClipboard;
 import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.QuickScreenshot;
+import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.RhythmGameRtMode;
 import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.ScreenRotation;
 import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.SpeedInstall;
 import com.sevtinge.hyperceiler.libhook.rules.systemframework.others.SystemLockApp;
@@ -171,6 +172,9 @@ public class SystemFrameworkV extends BaseLoad {
         initHook(new UseAndroidPackageInstaller(), PrefsBridge.getBoolean("system_framework_use_android_package_installer"));
         initHook(new QuickScreenshot(), PrefsBridge.getBoolean("system_framework_quick_screenshot"));
         initHook(new LinkTurboToast(), PrefsBridge.getBoolean("system_framework_disable_link_turbo_toast"));
+        initHook(new RhythmGameRtMode(),
+            PrefsBridge.getBoolean("rhythm_latency_enable", false)
+                && PrefsBridge.getBoolean("rhythm_latency_rt_touch_boost", true));
         initHook(GMSDozeFixFramework.INSTANCE, PrefsBridge.getBoolean("powerkeeper_gms_doze_fix"));
         initHook(new NativeFilePicker(), PrefsBridge.getBoolean("system_framework_native_file_picker"));
 

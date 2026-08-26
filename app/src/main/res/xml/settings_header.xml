@@ -395,11 +395,11 @@
         app:inflatedXml="@xml/barrage"/>
 
     <header
+        android:fragment="com.sevtinge.hyperceiler.hooker.JoyoseSettings"
         android:icon="@drawable/ic_default"
         android:id="@+id/joyose"
         android:summary="com.xiaomi.joyose"
-        android:title="@string/joyose"
-        app:inflatedXml="@xml/joyose"/>
+        android:title="@string/joyose" />
 
     <header
         android:fragment="com.sevtinge.hyperceiler.hooker.GetAppsFragment"
