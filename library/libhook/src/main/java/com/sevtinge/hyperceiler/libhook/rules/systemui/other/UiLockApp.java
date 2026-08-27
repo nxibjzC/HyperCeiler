@@ -886,8 +886,13 @@ public class UiLockApp extends BaseHook {
                 if (shadeListBuilder == null) return;
                 normalizeRenderedNotificationVisibility(notifPipeline);
                 callMethod(shadeListBuilder, "rebuildListIfBefore", 1);
-                new Handler(context.getMainLooper()).postDelayed(
-                    this::restartStatusBarNotificationIconBinding, 100L);
+                new Handler(context.getMainLooper()).postDelayed(() -> {
+                    // rebuildListIfBefore 会重新确定每个 Row 的父分组。等它完成后再沿
+                    // ExpandableNotificationRow 的原生入口恢复背景，否则锁定期间创建的
+                    // 单通知可能保留一个 GONE、0 x 0 的 backgroundNormal。
+                    normalizeRenderedNotificationVisibility(notifPipeline);
+                    restartStatusBarNotificationIconBinding();
+                }, 100L);
                 XposedLog.d(TAG, "scheduled notification pipeline rebuild after guided access exit");
             } catch (Throwable e) {
                 XposedLog.w(TAG, "scheduleNotificationPipelineRebuild E: " + e);
@@ -956,6 +961,13 @@ public class UiLockApp extends BaseHook {
                     if (viewState != null) {
                         setObjectField(viewState, "gone", false);
                     }
+                } catch (Throwable ignored) {
+                }
+                try {
+                    // 由 Row 根据当前 isChildInGroup/isSummaryWithChildren 重新决定背景。
+                    // 对顶层单通知会把 backgroundNormal 从 GONE 恢复为 VISIBLE；
+                    // 对折叠分组子项仍会保持无独立背景，不破坏原生分组样式。
+                    callMethod(row, "updateBackgroundForGroupState");
                 } catch (Throwable ignored) {
                 }
                 if (changed) restored++;
