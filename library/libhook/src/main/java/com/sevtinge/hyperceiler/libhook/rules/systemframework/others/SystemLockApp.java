@@ -113,26 +113,19 @@ public class SystemLockApp extends BaseHook {
                     }
 
                     Object result = chain.proceed();
-                    long identity = Binder.clearCallingIdentity();
-                    try {
-                        if (context == null) return result;
-
-                        isLock = false;
-                        setLockApp(context, -1);
-                        applyGestureLineShielding(context, false);
-                    } catch (Throwable e) {
-                        XposedLog.e(TAG, "stopSystemLockTaskMode E: " + e);
-                    } finally {
-                        Binder.restoreCallingIdentity(identity);
-                    }
+                    // LockTaskController.removeLockedTask() 只把真正的退出流程投递到 ATMS
+                    // Handler；此处返回时 framework 仍可能保留锁定用的 status-bar disable token。
+                    // key_lock_app 必须等 performStopLockTask() 完成后再发布，否则 SystemUI 会
+                    // 概率性读取到旧 flags，并把“仍处于锁定”的状态固化下来。
                     return result;
                 }
             }
         );
 
-        // 确保 key_lock_app 和屏蔽状态一定能恢复。
-        chainAllMethods("com.android.server.wm.ActivityTaskManagerService",
-            "stopLockTaskModeInternal",
+        // framework 的退出提交点：mLockTaskModeState、StatusBarService disable token、
+        // keyguard 和 WindowManager 状态均已恢复后，才通知 SystemUI 解锁。
+        chainAllMethods("com.android.server.wm.LockTaskController",
+            "performStopLockTask",
             new XposedInterface.Hooker() {
                 @Override
                 public Object intercept(XposedInterface.Chain chain) throws Throwable {
@@ -141,13 +134,12 @@ public class SystemLockApp extends BaseHook {
                     try {
                         Context context = (Context) getObjectField(chain.getThisObject(), "mContext");
                         if (context == null) return result;
-                        if (!isLock && getLockApp(context) == -1) return result;
 
                         isLock = false;
                         setLockApp(context, -1);
                         applyGestureLineShielding(context, false);
                     } catch (Throwable e) {
-                        XposedLog.e(TAG, "stopLockTaskModeInternal E: " + e);
+                        XposedLog.e(TAG, "performStopLockTask E: " + e);
                     } finally {
                         Binder.restoreCallingIdentity(identity);
                     }
