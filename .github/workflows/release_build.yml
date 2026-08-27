@@ -19,6 +19,8 @@ jobs:
     if: |
       startsWith(github.event.head_commit.message, 'app: update version ')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -44,7 +46,7 @@ jobs:
     runs-on: macos-latest
     name: Build App
     permissions:
-      contents: read
+      contents: write
       packages: read
     steps:
       - name: Checkout Git Repository

@@ -321,6 +321,11 @@ jobs:
         run: |
           set -euo pipefail
 
+          if [[ -z "${BOT_TOKEN}" || -z "${GROUP_ID}" ]]; then
+            echo "Telegram Canary secrets are not configured; artifact upload remains available." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
           CAPTION="$(cat commit_caption.txt)"
 
           curl -fsS -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendDocument" \
@@ -364,6 +369,11 @@ jobs:
             New push to GitHub
             by `${{ github.triggering_actor }}`
         run: |
+          if [[ -z "${BOT_TOKEN}" || -z "${GROUP_DEBUG_ID}" ]]; then
+            echo "Telegram debug-group secrets are not configured; artifact upload remains available." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
           ESCAPED=$(python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))')
           cd ${{ github.workspace }}
           curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${GROUP_DEBUG_ID}&media=%5B%7B%22type%22:%22document%22,%20%22media%22:%22attach://debug%22,%22parse_mode%22:%22MarkdownV2%22,%22caption%22:${ESCAPED}%7D%5D" -F debug="@${DEBUG}"
