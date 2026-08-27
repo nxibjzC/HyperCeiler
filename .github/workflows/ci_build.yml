@@ -40,6 +40,9 @@ jobs:
       )
     runs-on: macos-latest
     name: Build App
+    permissions:
+      contents: read
+      packages: read
     steps:
       - name: Checkout Git Repository
         uses: actions/checkout@v6
@@ -60,6 +63,9 @@ jobs:
 
       - name: Create Sign File
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GIT_ACTOR: ${{ github.actor }}
+          GIT_TOKEN: ${{ github.token }}
         run: |
           touch signing.properties
           echo storePassword=${{ secrets.KEY_STORE_PASSWORD }} >> signing.properties
@@ -67,8 +73,8 @@ jobs:
           echo keyPassword='${{ secrets.KEY_STORE_PASSWORD }}' >> signing.properties
           echo storeFile=../key.jks >> signing.properties
           echo ${{ secrets.SIGNING_KEY }} | base64 --decode > key.jks
-          echo "GIT_ACTOR=${{ secrets.GIT_ACTOR }}" >> $GITHUB_ENV
-          echo "GIT_TOKEN=${{ secrets.GIT_TOKEN }}" >> $GITHUB_ENV
+          echo "GIT_ACTOR=${GIT_ACTOR}" >> $GITHUB_ENV
+          echo "GIT_TOKEN=${GIT_TOKEN}" >> $GITHUB_ENV
 
       - name: Build with Gradle (Canary)
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'

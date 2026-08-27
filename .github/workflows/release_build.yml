@@ -43,6 +43,9 @@ jobs:
       contains(github.event.head_commit.message, '[release]') || contains(github.event.head_commit.message, '[beta]')
     runs-on: macos-latest
     name: Build App
+    permissions:
+      contents: read
+      packages: read
     steps:
       - name: Checkout Git Repository
         uses: actions/checkout@v6
@@ -62,6 +65,9 @@ jobs:
           cache-overwrite-existing: true
 
       - name: Create Sign File
+        env:
+          GIT_ACTOR: ${{ github.actor }}
+          GIT_TOKEN: ${{ github.token }}
         run: |
           touch signing.properties
           echo storePassword=${{ secrets.KEY_STORE_PASSWORD }} >> signing.properties
@@ -69,6 +75,8 @@ jobs:
           echo keyPassword='${{ secrets.KEY_STORE_PASSWORD }}' >> signing.properties
           echo storeFile=../key.jks >> signing.properties
           echo ${{ secrets.SIGNING_KEY }} | base64 --decode > key.jks
+          echo "GIT_ACTOR=${GIT_ACTOR}" >> $GITHUB_ENV
+          echo "GIT_TOKEN=${GIT_TOKEN}" >> $GITHUB_ENV
 
       - name: Build Release APK
         if: contains(github.event.head_commit.message, '[release]')
