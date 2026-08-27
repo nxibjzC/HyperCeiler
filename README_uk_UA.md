@@ -2,9 +2,9 @@
 
 <img src="\imgs\icon.webp" width="160" height="160" style="display: block; margin: 0 auto;" alt="icon" />
 
-# HyperCeiler
+# RhythmCeiler
 
-### Зробімо HyperOS знову чудовим!
+### Форк HyperCeiler для ритм-ігор на HyperOS 3 Pad
 
 [简体中文](/README.md)&nbsp;&nbsp;|&nbsp;&nbsp;[繁體中文](/README_zh-HK.md)&nbsp;&nbsp;|&nbsp;&nbsp;[English](/README_en-US.md)&nbsp;&nbsp;|&nbsp;&nbsp;Українська&nbsp;&nbsp;|&nbsp;&nbsp;[Português (Brasil)](/README_pt-BR.md)
 
@@ -12,15 +12,15 @@
 
 ## Наразі підтримувані версії
 
-HyperOS для Android 15-16
+Xiaomi HyperOS 3 Pad на базі Android 15
 
 ## Інструкції перед використанням
 
-Будь ласка, увімкніть HyperCeiler у [LSPosed](https://github.com/LSPosed/LSPosed/releases), потім активуйте відповідну функцію в додатку HyperCeiler та перезапустіть область дії (потрібен root-доступ).
+Будь ласка, увімкніть RhythmCeiler у [LSPosed](https://github.com/LSPosed/LSPosed/releases), потім активуйте відповідну функцію в додатку RhythmCeiler та перезапустіть область дії (потрібен root-доступ).
 
 Цей модуль <b>не підтримує</b> `сторонні прошивки Xiaomi HyperOS зі значними модифікаціями`, `системне програмне забезпечення зі значними модифікаціями` та деякі `міжнародні прошивки Xiaomi HyperOS`.
 
-Наразі HyperCeiler адаптовано для мобільних пристроїв з Xiaomi HyperOS 3.0 на базі Android 16. Покриття не є повним і вимагає постійного тестування та вдосконалення.
+RhythmCeiler розробляється й перевіряється насамперед на Xiaomi Pad 6 Pro для HyperOS 3 Pad на базі Android 15. Інші планшети, телефони, Android 16 та інші гілки системи не входять до поточної основної сфери підтримки й можуть потребувати додаткової перевірки сумісності.
 
 Перед тим, як надсилати відгук, будь ласка, перевірте, чи не існує вже такого ж відгуку, щоб не створювати зайвих клопотів розробникам. Витрачати однакову енергію на читання однакових відгуків — це марна трата часу.
 
@@ -96,6 +96,19 @@ HyperOS для Android 15-16
 | Диктофон                       | com.android.soundrecorder          |
 | LPA                            | com.miui.euicc                     |
 | Служба активації Xiaomi SIM    | com.xiaomi.simactivate.service     |
+| Контакти                       | com.android.contacts               |
+| Вибір фотографій               | com.android.photopicker            |
+| Google app                     | com.google.android.googlequicksearchbox |
+| Mi Fitness                     | com.mi.health                      |
+| Mi Wallet                      | com.mipay.wallet                   |
+| Нотатки                        | com.miui.notes                     |
+| Часті фрази                    | com.miui.phrase                    |
+| Xiaomi AI Engine               | com.xiaomi.aicr                    |
+| Xiaomi Touch Service           | com.xiaomi.touchservice            |
+| Міжекранна взаємодія           | com.xiaomi.mirror                  |
+| Голосовий помічник Mi AI       | com.miui.voiceassist               |
+| Плагін системного інтерфейсу   | miui.systemui.plugin               |
+| Xiaomi Service Framework       | com.xiaomi.xmsf                    |
 
 </details>
 

@@ -2,9 +2,9 @@
 
 <img src="\imgs\icon.webp" width="160" height="160" style="display: block; margin: 0 auto;" alt="icon" />
 
-# HyperCeiler
+# RhythmCeiler
 
-### Make HyperOS Great Again!
+### A HyperCeiler fork focused on rhythm-game experiences for HyperOS 3 Pad
 
 [简体中文](/README.md)&nbsp;&nbsp;|&nbsp;&nbsp;[繁體中文](/README_zh-HK.md)&nbsp;&nbsp;|&nbsp;&nbsp;English&nbsp;&nbsp;|&nbsp;&nbsp;[Українська](/README_uk_UA.md)&nbsp;&nbsp;|&nbsp;&nbsp;[Português (Brasil)](/README_pt-BR.md)
 
@@ -12,15 +12,15 @@
 
 ## Currently supported versions
 
-HyperOS for Android 15-16
+Xiaomi HyperOS 3 Pad based on Android 15
 
 ## Pre-use instructions
 
-Please enable HyperCeiler in [LSPosed](https://github.com/LSPosed/LSPosed/releases), then enable the corresponding feature in the HyperCeiler app and restart the scope (root access required).
+Please enable RhythmCeiler in [LSPosed](https://github.com/LSPosed/LSPosed/releases), then enable the corresponding feature in the RhythmCeiler app and restart the scope (root access required).
 
 This module <b>does not support</b> `third-party Xiaomi HyperOS ROMs with a lot of modifications`, `system software with a lot of modifications`, and some `international Xiaomi HyperOS ROMs`.
 
-Currently, HyperCeiler is adapted for Xiaomi HyperOS 3.0 mobile devices based on Android 16. The coverage isn't very comprehensive and requires ongoing testing and improvements.
+RhythmCeiler is developed and validated primarily on the Xiaomi Pad 6 Pro for HyperOS 3 Pad based on Android 15. Other tablets, phones, Android 16, and different system branches are outside the current primary support scope and may require additional compatibility testing.
 
 Before submitting feedback, please pay attention to whether there is already the same feedback to avoid causing trouble to developers. Spending the same energy reading the same feedback is a waste of time.
 
@@ -36,9 +36,9 @@ HyperCeiler has stopped maintaining MIUI ROMs for Android 11-13 and HyperOS 1.0/
 
 Xiaomi HyperOS 3 or 4 will be the endpoint of this project. For now, Xiaomi has selectively incorporated some of Xposed's features into its own (user‑unfriendly) devices, and the module's capabilities have been gradually reduced as the system is updated.
 
-I also watched Xiaomi HyperOS evolve, step by step, from something completely unusable without root to something almost usable (except for the Xiaomi Pad).
+This fork treats tablets as its primary maintenance target, starting with the Xiaomi Pad 6 Pro and continuously improving HyperOS 3 Pad support.
 
-In the future, this module will be extensively adapted to Xiaomi HyperOS 3.0 and later versions, although there's no guarantee that all features will be available. Xiaomi HyperOS 2 will be discontinued in future maintenance updates due to significant differences compared to the newer versions.
+Future work will prioritize HyperOS 3 Pad based on Android 15, without guaranteeing that every feature works. General improvements for other platforms will continue to be synchronized from upstream.
 
 ## Supported apps
 
@@ -110,6 +110,15 @@ In the future, this module will be extensively adapted to Xiaomi HyperOS 3.0 and
 | LPA                               | com.miui.euicc                     |
 | Xiaomi SIM Activation Service     | com.xiaomi.simactivate.service     |
 | Device interconnectivity services | com.xiaomi.mirror                  |
+| Contacts                          | com.android.contacts               |
+| Photo Picker                      | com.android.photopicker            |
+| Google app                        | com.google.android.googlequicksearchbox |
+| Mi Fitness                        | com.mi.health                      |
+| Frequent phrases                 | com.miui.phrase                    |
+| Xiaomi Touch Service             | com.xiaomi.touchservice            |
+| Mi AI voice assistant            | com.miui.voiceassist               |
+| System UI plugin                 | miui.systemui.plugin               |
+| Xiaomi Service Framework         | com.xiaomi.xmsf                    |
 
 </details>
 

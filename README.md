@@ -4,20 +4,21 @@
 
 # RhythmCeiler
 
-### 面向音游体验持续维护的 HyperCeiler 分支
+### 面向 HyperOS 3 Pad 音游体验持续维护的 HyperCeiler 分支
 
 简体中文&nbsp;&nbsp;|&nbsp;&nbsp;[繁體中文](/README_zh-HK.md)&nbsp;&nbsp;|&nbsp;&nbsp;[English](/README_en-US.md)&nbsp;&nbsp;|&nbsp;&nbsp;[Українська](/README_uk_UA.md)&nbsp;&nbsp;|&nbsp;&nbsp;[Português (Brasil)](/README_pt-BR.md)
 
 </div>
 
 > [!IMPORTANT]
-> RhythmCeiler 是基于 [HyperCeiler](https://github.com/ReChronoRain/HyperCeiler) 的独立维护分支，重点维护和更新音游、低延迟及相关系统体验功能，并持续同步上游改进。
+> RhythmCeiler 是基于 [HyperCeiler](https://github.com/ReChronoRain/HyperCeiler) 的独立维护分支，面向基于 Android 15 的 HyperOS 3 Pad，重点维护和更新音游、低延迟及相关系统体验功能，并持续同步上游改进。
+> 项目从 Xiaomi Pad 6 Pro 出发进行开发和验证；其他设备及系统版本不属于当前主要适配范围，兼容性需自行验证。
 > 本项目沿用 `com.sevtinge.hyperceiler` 包名，作为原版的替代安装版本；请只从本仓库的 Releases 或 Actions 获取安装包。
 > 由于发布证书不同，Android 默认不允许从原版直接覆盖安装；可先启用项目内的软件包签名校验绕过功能再切换，或卸载原版后安装。安装 RhythmCeiler 后，使用相同维护版密钥签名的后续版本可以正常覆盖升级。
 
 ## 当前支持的版本
 
-Android 15-16 的 HyperOS
+基于 Android 15 的 Xiaomi HyperOS 3 Pad
 
 ## 使用前说明
 
@@ -25,7 +26,7 @@ Android 15-16 的 HyperOS
 
 本模块<b>不支持</b>`修改较多的第三方 Xiaomi HyperOS ROM`、`修改较多的系统软件`，以及`部分国际 Xiaomi HyperOS ROM`。
 
-目前 HyperCeiler 是基于 Android 16 的 Xiaomi HyperOS 3.0 的手机端设备进行适配，覆盖不是很完整，需要不断测试和改进。
+目前 RhythmCeiler 以 Xiaomi Pad 6 Pro 为主要开发与验证设备，面向基于 Android 15 的 Xiaomi HyperOS 3 Pad 进行适配。其他平板、手机、Android 16 及不同系统分支不属于当前主要适配范围，功能兼容性需自行验证。
 
 提交反馈前请注意是否已有相同反馈，避免给开发者造成困扰。花相同精力看相同反馈是一件很浪费时间的事情。
 
@@ -41,9 +42,9 @@ HyperCeiler 已停止维护 Android 11-13 的 MIUI ROM 和 Android 13/14 的 Hyp
 
 Xiaomi HyperOS 3 or 4 将是本项目的一个终点，就目前来说，小米官方有选择性的根据 Xposed 的功能调整了自己的（反人类）功能，模块的功能也随着系统的更新在逐渐减少。
 
-也是一步步看着澎湃从没 Root 不能用到变得差不多能用的样子（小米平板除外）
+本分支将平板作为主要维护场景，以 Xiaomi Pad 6 Pro 为起点持续补齐 HyperOS 3 Pad 的适配。
 
-未来本模块会深度适配 HyperOS 3.0 及以上版本（但不保证功能上都能用），HyperOS 2 会在后续维护中归档（因为变化差距大）
+未来本模块会优先适配基于 Android 15 的 HyperOS 3 Pad（但不保证所有功能均可用）；其他平台的通用改进继续从上游同步。
 
 ## 作用域包含的应用
 
@@ -115,6 +116,15 @@ Xiaomi HyperOS 3 or 4 将是本项目的一个终点，就目前来说，小米�
 | LPA                | com.miui.euicc                     |
 | 小米SIM卡激活服务         | com.xiaomi.simactivate.service     |
 | 跨屏协同服务             | com.xiaomi.mirror                  |
+| 联系人                | com.android.contacts               |
+| 照片选择器              | com.android.photopicker            |
+| Google 应用           | com.google.android.googlequicksearchbox |
+| 小米运动健康             | com.mi.health                      |
+| 常用语                | com.miui.phrase                    |
+| 触控服务               | com.xiaomi.touchservice            |
+| 小爱同学               | com.miui.voiceassist               |
+| 系统界面插件             | miui.systemui.plugin               |
+| 小米服务框架             | com.xiaomi.xmsf                    |
 
 </details>
 

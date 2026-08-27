@@ -2,9 +2,9 @@
 
 <img src="\imgs\icon.webp" width="160" height="160" style="display: block; margin: 0 auto;" alt="icon" />
 
-# HyperCeiler
+# RhythmCeiler
 
-### Torne o HyperOS ótimo novamente!
+### Um fork do HyperCeiler focado em jogos de ritmo no HyperOS 3 Pad
 
 [简体中文](/README.md)&nbsp;&nbsp;|&nbsp;&nbsp;[繁體中文](/README_zh-HK.md)&nbsp;&nbsp;|&nbsp;&nbsp;[English](/README_en-US.md)&nbsp;&nbsp;|&nbsp;&nbsp;[Українська](/README_uk_UA.md)&nbsp;&nbsp;|&nbsp;&nbsp;Português (Brasil)
 
@@ -12,15 +12,15 @@
 
 ## Versões atualmente suportadas
 
-HyperOS para Android 15-16
+Xiaomi HyperOS 3 Pad baseado no Android 15
 
 ## Instruções de pré-uso
 
-Por favor, ative o HyperCeiler no [LSPosed](https://github.com/LSPosed/LSPosed/releases), em seguida, ative o recurso correspondente no app HyperCeiler e reinicie o escopo (necessário root).
+Por favor, ative o RhythmCeiler no [LSPosed](https://github.com/LSPosed/LSPosed/releases), em seguida, ative o recurso correspondente no app RhythmCeiler e reinicie o escopo (necessário root).
 
 Este módulo <b>não suporta</b> `ROM Xiaomi HyperOS de terceiros com muitas modificações`, `software de sistema com muitas modificações` e algumas `ROM Xiaomi HyperOS internacionais`.
 
-Atualmente, o HyperCeiler está adaptado para dispositivos móveis Xiaomi HyperOS 3.0 baseados em Android 16. A cobertura não é muito abrangente e requer testes e melhorias contínuas.
+O RhythmCeiler é desenvolvido e validado principalmente no Xiaomi Pad 6 Pro para o HyperOS 3 Pad baseado no Android 15. Outros tablets, smartphones, Android 16 e diferentes variantes do sistema estão fora do escopo principal atual e podem exigir testes adicionais de compatibilidade.
 
 Antes de enviar feedback, preste atenção se já existe o mesmo feedback para evitar problemas aos desenvolvedores. Gastar a mesma energia lendo o mesmo feedback é uma perda de tempo.
 
@@ -36,9 +36,9 @@ O HyperCeiler deixou de ser mantido em ROM MIUI para o Android 11-13 e ROM Hyper
 
 O Xiaomi HyperOS 3 ou 4 será o ponto final deste projeto. Por enquanto, a Xiaomi incorporou seletivamente algumas das funções do Xposed em seus próprios dispositivos (pouco intuitivos), e as capacidades do módulo têm sido gradualmente reduzidas à medida que o sistema é atualizado.
 
-Também acompanhei o Xiaomi HyperOS evoluir, passo a passo, de algo completamente inutilizável sem root para algo quase utilizável (exceto Xiaomi Pad).
+Este fork trata tablets como seu principal alvo de manutenção, começando pelo Xiaomi Pad 6 Pro e melhorando continuamente o suporte ao HyperOS 3 Pad.
 
-No futuro, este módulo será amplamente adaptado ao Xiaomi HyperOS 3.0 e versões posteriores, embora não haja garantia de que todas as funcionalidades estarão disponíveis. O Xiaomi HyperOS 2 será descontinuado em futuras manutenções, devido às grandes diferenças em relação às versões mais recentes.
+O trabalho futuro priorizará o HyperOS 3 Pad baseado no Android 15, sem garantia de que todos os recursos funcionarão. Melhorias gerais para outras plataformas continuarão a ser sincronizadas do projeto upstream.
 
 ## Apps suportados
 
@@ -107,6 +107,18 @@ No futuro, este módulo será amplamente adaptado ao Xiaomi HyperOS 3.0 e versõ
 | Gravador                                       | com.android.soundrecorder          |
 | LPA                                            | com.miui.euicc                     |
 | Serviço de ativação do SIM Xiaomi              | com.xiaomi.simactivate.service     |
+| Contatos                                       | com.android.contacts               |
+| Seletor de fotos                               | com.android.photopicker            |
+| Google app                                     | com.google.android.googlequicksearchbox |
+| Mi Fitness                                     | com.mi.health                      |
+| Mi Wallet                                      | com.mipay.wallet                   |
+| Frases frequentes                              | com.miui.phrase                    |
+| Xiaomi AI Engine                               | com.xiaomi.aicr                    |
+| Xiaomi Touch Service                           | com.xiaomi.touchservice            |
+| Serviços de interconectividade do dispositivo  | com.xiaomi.mirror                  |
+| Assistente de voz Mi AI                        | com.miui.voiceassist               |
+| Plugin da interface do sistema                 | miui.systemui.plugin               |
+| Xiaomi Service Framework                       | com.xiaomi.xmsf                    |
 
 </details>
 

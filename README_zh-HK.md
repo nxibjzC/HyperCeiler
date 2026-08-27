@@ -2,9 +2,9 @@
 
 <img src="\imgs\icon.webp" width="160" height="160" style="display: block; margin: 0 auto;" alt="icon" />
 
-# HyperCeiler
+# RhythmCeiler
 
-### Make HyperOS Great Again!
+### 專注 HyperOS 3 Pad 音遊體驗的 HyperCeiler 分支
 
 [简体中文](/README.md)
 &nbsp;&nbsp;|&nbsp;&nbsp;繁體中文&nbsp;&nbsp;|&nbsp;&nbsp;[English](/README_en-US.md)
@@ -15,17 +15,17 @@
 
 ## 當前支持的版本
 
-Android 15-16 的 HyperOS
+基於 Android 15 的 Xiaomi HyperOS 3 Pad
 
 ## 使用前說明
 
-請在 [LSPosed](https://github.com/LSPosed/LSPosed/releases) 中啟用 HyperCeiler，然後在 HyperCeiler
+請在 [LSPosed](https://github.com/LSPosed/LSPosed/releases) 中啟用 RhythmCeiler，然後在 RhythmCeiler
 應用內啟用對應的功能，重啟作用域（需要 Root 權限）。
 
 本模組<b>不支持</b>`修改較多的第三方 Xiaomi HyperOS ROM`、`修改較多的系統軟件`，以及
 `部分國際 Xiaomi HyperOS ROM`。
 
-目前 HyperCeiler 是基於 Android 16 的 Xiaomi HyperOS 3.0 的手機端設備進行適配，覆蓋範圍不是很完整，需要不斷測試和改進。
+目前 RhythmCeiler 以 Xiaomi Pad 6 Pro 為主要開發與驗證裝置，面向基於 Android 15 的 Xiaomi HyperOS 3 Pad 進行適配。其他平板、手機、Android 16 及不同系統分支不屬於目前主要適配範圍，功能相容性需自行驗證。
 
 提交反饋前請注意是否已有相同反饋，避免給開發者造成困擾。花相同精力看相同反饋是一件很浪費時間的事情。
 
@@ -44,9 +44,9 @@ HyperCeiler 已停止維護 Android 11-13 的 MIUI ROM 和 Android 13/14 的 Hyp
 Xiaomi HyperOS 3 或 4 將會是本項目的終點，就目前來說，小米官方已選擇性地根據 Xposed
 的功能調整了自家的（反人類）功能，模組的功能也隨著系統的更新在逐漸減少。
 
-也是一步步看著澎湃從沒 Root 不能用到變得差不多能用的樣子（小米平板除外）
+本分支以平板作為主要維護場景，從 Xiaomi Pad 6 Pro 出發持續補齊 HyperOS 3 Pad 的適配。
 
-未來本模組會深度適配 HyperOS 3.0 及以上版本（但不保證所有功能都能使用），HyperOS 2 將在後續維護中歸檔（因為變化差距大）
+未來本模組會優先適配基於 Android 15 的 HyperOS 3 Pad（但不保證所有功能均可使用）；其他平台的通用改進將繼續從上游同步。
 
 ## 作用域包含的應用
 
@@ -118,6 +118,15 @@ Xiaomi HyperOS 3 或 4 將會是本項目的終點，就目前來說，小米官
 | LPA               | com.miui.euicc                     |
 | 小米SIM卡啟動服務        | com.xiaomi.simactivate.service     |
 | 跨螢幕協同服務           | com.xiaomi.mirror                  |
+| 聯絡人               | com.android.contacts               |
+| 相片選擇器             | com.android.photopicker            |
+| Google 應用程式       | com.google.android.googlequicksearchbox |
+| 小米運動健康            | com.mi.health                      |
+| 常用語               | com.miui.phrase                    |
+| 觸控服務              | com.xiaomi.touchservice            |
+| 小愛同學              | com.miui.voiceassist               |
+| 系統介面外掛            | miui.systemui.plugin               |
+| 小米服務框架            | com.xiaomi.xmsf                    |
 
 </details>
 
